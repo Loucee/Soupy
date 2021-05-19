@@ -90,7 +90,7 @@ end
 ```
 
 #### Timers
-**Soupy.timer.new(interval, repeats, callback, args)**
+`Soupy.timer.new(interval, repeats, callback, args)`
 - **interval:** How long to wait before firing the callback (in seconds)
 - **repeats:** Whether or not the timer should repeat
 - **callback:** Function to execute
@@ -116,17 +116,17 @@ local myTimer = Soupy.timer.new(5, true, myCallback, "Test1", "Test2", "Test3")
 If you need to kill a timer you can use `Soupy.timer.stop(timer)`, the timer parameter being the timer object
 
 #### Math
-`Soupy.math.hypot(x, y)`
+`Soupy.math.hypot(x, y)`<br/>
 Returns `math.sqrt(x * x + y * y)`, find more information [here](https://en.wikipedia.org/wiki/Hypot)
 
-`Soupy.math.distance(x1, y1, x2, y2)`
+`Soupy.math.distance(x1, y1, x2, y2)`<br/>
 Returns the distance between 2 points
 
 #### Physics
-`Soupy.physics.circlesIntersect(x1, y1, r1, x2, y2, r2)`
+`Soupy.physics.circlesIntersect(x1, y1, r1, x2, y2, r2)`<br/>
 Checks if 2 circles intersect with each other
 
-`Soupy.physics.gravitateToward(x1, y1, x2, y2, f)`
+`Soupy.physics.gravitateToward(x1, y1, x2, y2, f)`<br/>
 Helps simulate a gravity pull of x1, y1 toward point x2, y2 with f to determine how strong the pull is
 ```lua
 local fx, fy = Soupy.physics.gravitateToward(self.x, self.y, screenCenterX, screenCenterY, 500)
