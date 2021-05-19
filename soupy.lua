@@ -30,7 +30,6 @@ function soupy.event.update(dt)
 		local t = _timers[i]
 
 		t._timePassed = t._timePassed + dt
-
 		if (t._timePassed >= t.interval) then
 			t.callback(unpack(t.args))
 
