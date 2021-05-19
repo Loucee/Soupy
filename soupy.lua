@@ -32,7 +32,7 @@ function soupy.event.update(dt)
 		t._timePassed = t._timePassed + dt
 
 		if (t._timePassed >= t.interval) then
-			t.callback(t.args)
+			t.callback(unpack(t.args))
 
 			if (t.repeats) then
 				t._timePassed = 0
@@ -164,7 +164,7 @@ function soupy.timer.new(interval, repeats, callback, ...)
 		interval = interval,
 		repeats = repeats,
 		callback = callback,
-		args = ...
+		args = {...}
 	}
 
 	table.insert(_timers, t)
