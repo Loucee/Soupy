@@ -135,7 +135,7 @@ self.velocityY = self.velocityY + fy
 
 self.x = self.x + self.velocityX * dt
 self.y = self.y + self.velocityY * dt
-``
+```
 
 ## License
 MIT
