@@ -7,7 +7,7 @@ Löve2D state-manager, timers, and other helpful functions
 Step 1: Place the "soupy.lua" library somewhere in your source folder (e.g. "/lib/soupy.lua")<br/>
 Step 2: Add a variable to require the library in your main.lua file:
 ```lua
-Soupy = require("lib.soupy.lua")
+Soupy = require("lib.soupy")
 ```
 
 ### Soupy functions
