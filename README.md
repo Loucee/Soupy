@@ -122,6 +122,9 @@ Returns `math.sqrt(x * x + y * y)`, find more information [here](https://en.wiki
 `Soupy.math.distance(x1, y1, x2, y2)`<br/>
 Returns the distance between 2 points
 
+`Soupy.math.round(n)`<br/>
+Rounds n to nearest integer
+
 #### Physics
 `Soupy.physics.circlesIntersect(x1, y1, r1, x2, y2, r2)`<br/>
 Checks if 2 circles intersect with each other
