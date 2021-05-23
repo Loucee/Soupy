@@ -30,6 +30,7 @@ function soupy.event.update(dt)
 		local t = _timers[i]
 
 		t._timePassed = t._timePassed + dt
+
 		if (t._timePassed >= t.interval) then
 			t.callback(unpack(t.args))
 
@@ -136,6 +137,10 @@ function soupy.math.distance(fromX, fromY, toX, toY)
 	local dx = fromX - toX
 	local dy = fromY - toY
 	return math.sqrt(dx * dx + dy * dy)
+end
+
+function soupy.math.round(n)
+	return math.floor(n + 0.5)
 end
 
 --------------------------------------------------------------------------------
