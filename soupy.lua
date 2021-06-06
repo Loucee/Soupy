@@ -51,10 +51,10 @@ function soupy.event.draw()
 	end
 end
 
-function soupy.event.keypressed(key, unicode)
+function soupy.event.keypressed(key, unicode, isRepeat)
 	for index, state in pairs(_states) do
 		if state and state._enabled and state.keypressed then
-			state:keypressed(key, unicode)
+			state:keypressed(key, unicode, isRepeat or false)
 		end
 	end
 end
@@ -143,6 +143,15 @@ function soupy.math.round(n)
 	return math.floor(n + 0.5)
 end
 
+function soupy.math.angle(x1, y1, x2, y2)
+    local a = math.deg(math.atan2(y2 - y1, x2 - x1))
+    if a < 0 then
+        return a + 360
+    else
+        return a
+    end
+end
+
 --------------------------------------------------------------------------------
 
 function soupy.physics.gravitateToward(x1, y1, x2, y2, gravityPull)
@@ -161,6 +170,10 @@ end
 
 function soupy.physics.boxCollision(x1, y1, w1, h1, x2, y2, w2, h2)
 	return x1 < x2 + w2 and x2 < x1 + w1 and y1 < y2 + h2 and y2 < y1 + h1
+end
+
+function soupy.physics.rectContains(x1, y1, w1, h1, x2, y2)
+	return x2 > x1 and x2 < x1 + w1 and y2 > y1 and y2 < y1 + h1
 end
 
 --------------------------------------------------------------------------------
