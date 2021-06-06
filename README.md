@@ -125,12 +125,18 @@ Returns the distance between 2 points
 `Soupy.math.round(n)`<br/>
 Rounds n to nearest integer
 
+`Soupy.math.angle(x1, y1, x2, y2)`</br>
+Returns the angle from point x1,y1 to x2,y2 in degrees
+
 #### Physics
 `Soupy.physics.circlesIntersect(x1, y1, r1, x2, y2, r2)`<br/>
 Checks if 2 circles intersect with each other
 
 `Soupy.physics.boxCollision(x1, y1, w1, h1, x2, y2, w2, h2)`<br/>
 Simple bounding box collision, checks if the rectangle at x1, y2 with size w1, h1 overlaps with the rectangle at x2, y2 with size w1, h2
+
+`Soupy.physics.rectContains(x1, y1, w1, h1, x2, y2)`</br>
+Checks if point x2,y2 is inside of rectangle x1,y1,w1,h1
 
 `Soupy.physics.gravitateToward(x1, y1, x2, y2, f)`<br/>
 Helps simulate a gravity pull of x1, y1 toward point x2, y2 with f to determine how strong the pull is
