@@ -128,6 +128,12 @@ Rounds n to nearest integer
 `Soupy.math.angle(x1, y1, x2, y2)`</br>
 Returns the angle from point x1,y1 to x2,y2 in degrees
 
+`Soupy.math.skewedRandomL(min, max)`<br/>
+Generates a random number between min and max with a preference for lower numbers
+
+`Soupy.math.skewedRandomH(min, max)`<br/>
+Generates a random number between min and max with a preference for higher numbers
+
 #### Physics
 `Soupy.physics.circlesIntersect(x1, y1, r1, x2, y2, r2)`<br/>
 Checks if 2 circles intersect with each other
