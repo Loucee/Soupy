@@ -152,6 +152,14 @@ function soupy.math.angle(x1, y1, x2, y2)
     end
 end
 
+function soupy.math.skewedRandomL(min, max)
+	return math.floor(min + (max - min) * love.math.random() ^ 2)
+end
+
+function soupy.math.skewedRandomH(min, max)
+	return math.floor(max + (min - max) * love.math.random() ^ 2)
+end
+
 --------------------------------------------------------------------------------
 
 function soupy.physics.gravitateToward(x1, y1, x2, y2, gravityPull)
