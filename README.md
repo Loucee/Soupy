@@ -85,6 +85,9 @@ end
 function menu:mousereleased(x, y, button)
 end
 
+function menu:onEntered() -- This function gets called when the state is entered through Soupy:enterState(state)
+end
+
 function menu:cleanup() -- This function is called when you do Soupy.removeState(name), and is used to clean up any variables/assets that are no longer needed
 end
 ```
@@ -134,6 +137,9 @@ Generates a random number between min and max with a preference for lower number
 `Soupy.math.skewedRandomH(min, max)`<br/>
 Generates a random number between min and max with a preference for higher numbers
 
+`Soupy.math.clamp(val, min, max)`<br/>
+Clamps val between min and max
+
 #### Physics
 `Soupy.physics.circlesIntersect(x1, y1, r1, x2, y2, r2)`<br/>
 Checks if 2 circles intersect with each other
@@ -154,6 +160,13 @@ self.velocityY = self.velocityY + fy
 self.x = self.x + self.velocityX * dt
 self.y = self.y + self.velocityY * dt
 ```
+
+#### Utils
+`Soupy.utils.tableContains(t, v)`<br/>
+Checks if table t contains v
+
+`Soupy.utils.dump(t,)`<br/>
+Prints table into console
 
 ## License
 MIT
