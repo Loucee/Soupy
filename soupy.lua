@@ -166,7 +166,7 @@ function soupy.math.skewedRandomH(min, max)
 end
 
 function soupy.math.clamp(val, min, max)
-    return math.max(min, math.min(val, max));
+    return math.max(min, math.min(val, max))
 end
 
 --------------------------------------------------------------------------------
