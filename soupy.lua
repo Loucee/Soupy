@@ -9,7 +9,8 @@ local soupy = {
 	event = { },
 	math = { },
 	physics = { },
-	timer = { }
+	timer = { },
+	utils = { }
 }
 
 local _current_state = ""
@@ -115,6 +116,10 @@ function soupy.enterState(name)
 		if state._identifier == name then
 			_current_state = name
 			state._enabled = true
+
+			if state.onEntered then
+				state:onEntered()
+			end
 		end
 	end
 end
@@ -160,6 +165,10 @@ function soupy.math.skewedRandomH(min, max)
 	return math.floor(max + (min - max) * love.math.random() ^ 2)
 end
 
+function soupy.math.clamp(val, min, max)
+    return math.max(min, math.min(val, max));
+end
+
 --------------------------------------------------------------------------------
 
 function soupy.physics.gravitateToward(x1, y1, x2, y2, gravityPull)
@@ -182,6 +191,35 @@ end
 
 function soupy.physics.rectContains(x1, y1, w1, h1, x2, y2)
 	return x2 > x1 and x2 < x1 + w1 and y2 > y1 and y2 < y1 + h1
+end
+
+--------------------------------------------------------------------------------
+
+function soupy.utils.tableContains(t, v)
+	for index, value in ipairs(t) do
+        if value == v then
+            return true
+        end
+    end
+
+    return false
+end
+
+function soupy.utils.dump(t)
+	if type(t) == 'table' then
+		local s = '{ '
+		for k,v in pairs(t) do
+			if type(k) ~= 'number' then
+				k = '"'..k..'"'
+			end
+			
+			s = s .. '['..k..'] = ' .. dump(v) .. ','
+		end
+
+		return s .. '} '
+	else
+		return tostring(t)
+	end
 end
 
 --------------------------------------------------------------------------------
